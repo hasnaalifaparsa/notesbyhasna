@@ -2,43 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tugas Kuliah - Notes by Hasna</title>
+  <title>Tugas Kuliah</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
     body {
-      font-family: Arial, sans-serif;
-      background: #fff;
       margin: 0;
-      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      background: url("https://wallpapercave.com/wp/wp10922677.jpg") no-repeat center center/cover;
+      color: #f1f5f9;
     }
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 15px;
+
+    .overlay {
+      background: rgba(10, 25, 47, 0.9);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 20px;
+      width: 95%;
+      max-width: 1000px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      color: #93c5fd;
       text-align: center;
+      margin-bottom: 25px;
     }
-    main {
-      padding: 20px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #1e293b;
+      border-radius: 15px;
+      overflow: hidden;
     }
-    a {
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+    }
+
+    th {
+      background: #2563eb;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #273549;
+    }
+
+    tr:hover {
+      background: #334155;
+    }
+
+    .status {
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+    .done { background: #22c55e; color: white; }
+    .pending { background: #eab308; color: black; }
+    .late { background: #ef4444; color: white; }
+
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 25px;
       text-decoration: none;
-      color: #4CAF50;
+      background: #2563eb;
+      padding: 12px 20px;
+      border-radius: 12px;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .back:hover {
+      background: #1e40af;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Tugas Kuliah</h1>
-  </header>
-
-  <main>
-    <h2>Daftar Tugas</h2>
-    <ul>
-      <li>Tugas 1: Pengantar Web Development</li>
-      <li>Tugas 2: Database Management</li>
-      <li>Tugas 3: Jaringan Komputer</li>
-    </ul>
-
-    <p><a href="index.html">⬅ Kembali ke Halaman Utama</a></p>
-  </main>
+  <div class="overlay">
+    <div class="card">
+      <h1>📚 Daftar Tugas Kuliah</h1>
+      <table>
+        <tr>
+          <th>Mata Kuliah</th>
+          <th>Tugas</th>
+          <th>Deadline</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Algoritma</td>
+          <td>Latihan Array & Looping</td>
+          <td>20 Sept 2025</td>
+          <td><span class="status pending">Pending</span></td>
+        </tr>
+        <tr>
+          <td>Basis Data</td>
+          <td>ERD & Relasi Tabel</td>
+          <td>22 Sept 2025</td>
+          <td><span class="status done">Selesai</span></td>
+        </tr>
+        <tr>
+          <td>Pemrograman Web</td>
+          <td>Buat Halaman Profil</td>
+          <td>25 Sept 2025</td>
+          <td><span class="status pending">Pending</span></td>
+        </tr>
+        <tr>
+          <td>Matematika Diskrit</td>
+          <td>Laporan Graf</td>
+          <td>15 Sept 2025</td>
+          <td><span class="status late">Terlambat</span></td>
+        </tr>
+      </table>
+      <a href="index.html" class="back">⬅ Kembali ke Halaman Utama</a>
+    </div>
+  </div>
 </body>
 </html>
