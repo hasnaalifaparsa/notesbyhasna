@@ -2,204 +2,203 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hasna's Web</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #0a1f44, #0d47a1);
-      color: white;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0a192f, #1e3a8a);
+      background-attachment: fixed;
+      color: #f1f5f9;
+    }
+
+    .overlay {
+      background: rgba(10, 25, 47, 0.88);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 30px;
+      width: 98%;
+      max-width: 1600px; /* lebih lebar lagi */
+      min-height: 98vh; /* lebih tinggi */
+      padding: 80px; /* padding diperbesar */
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.65);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid rgba(59, 130, 246, 0.45);
+    }
+
+    /* Navbar */
+    .navbar {
       text-align: center;
+      margin-bottom: 45px;
+    }
+    .navbar h2 {
+      color: #93c5fd;
+      font-size: 2.5rem; /* lebih besar */
+      letter-spacing: 2.5px;
+      text-shadow: 0 0 15px rgba(59,130,246,0.8);
     }
 
-    header {
-      background: rgba(10, 31, 68, 0.9);
-      padding: 25px;
-      font-size: 2.5em;
-      font-weight: bold;
-      letter-spacing: 2px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+      margin-bottom: 45px;
     }
-
-    .profile {
-      margin-top: 50px;
-    }
-
-    .profile img {
-      width: 220px;
-      height: 220px;
+    .header img {
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      border: 6px solid #1e88e5;
-      box-shadow: 0 0 35px #1e88e5;
+      border: 4px solid #3b82f6;
+      box-shadow: 0 0 22px rgba(59,130,246,0.8);
+      object-fit: cover;
+    }
+    .header h1 {
+      font-size: 3.2rem; /* lebih besar */
+      margin: 0;
+      color: #60a5fa;
+      text-shadow: 0 0 15px rgba(37,99,235,0.7);
+    }
+    .header p {
+      margin: 10px 0 0;
+      font-size: 1.2rem;
+      color: #cbd5e1;
     }
 
-    .description {
-      margin-top: 30px;
-      font-size: 1.3em;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.8;
+    /* Section */
+    h2 {
+      color: #93c5fd;
+      margin-bottom: 15px;
+      font-size: 1.8rem; /* lebih besar */
+      border-bottom: 2px solid #3b82f6;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    p {
+      line-height: 1.9;
+      font-size: 1.1rem;
     }
 
-    .links {
-      margin-top: 40px;
-      font-size: 1.2em;
+    .bio {
+      margin-bottom: 30px;
     }
 
-    .links a {
-      display: block;
-      margin: 12px;
-      color: #90caf9;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s, transform 0.2s;
+    /* Divider */
+    .divider {
+      text-align: center;
+      margin: 45px 0;
+      color: #60a5fa;
+      font-size: 1.5rem;
     }
 
-    .links a:hover {
-      color: #ffffff;
-      transform: scale(1.1);
+    .flex {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
     }
-
-    .tasks {
-      margin-top: 70px;
-    }
-
-    .tasks h2 {
-      margin-bottom: 35px;
-      font-size: 2em;
-    }
-
-    .task-btn {
-      background: #1565c0;
-      border: none;
-      padding: 18px 40px;
-      margin: 12px;
-      border-radius: 12px;
-      color: white;
-      font-size: 1.2em;
-      cursor: pointer;
+    .box {
+      flex: 1 1 400px; /* box lebih besar */
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 22px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.45);
       transition: 0.3s;
-      box-shadow: 0 0 15px rgba(21,101,192,0.7);
     }
-
-    .task-btn:hover {
-      background: #1e88e5;
-      transform: translateY(-4px);
-      box-shadow: 0 0 25px rgba(30,136,229,0.9);
+    .box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 22px rgba(59,130,246,0.8);
     }
-
-    footer {
-      margin-top: 80px;
-      padding: 25px;
-      font-size: 1em;
-      background: rgba(10, 31, 68, 0.9);
-      box-shadow: 0 -4px 15px rgba(0,0,0,0.4);
+    .box h3 {
+      color: #60a5fa;
+      margin-top: 0;
+      font-size: 1.5rem;
     }
-  </style>
-</head>
-<body>
-  <header>
-    Hasna's Web 💙
-  </header>
-
-  <div class="profile">
-    <img src="IMG_20250817_080440_797.jpg" alt="Profile Photo">
-  </div>
-
-  <div class="description">
-    <p>Hello! I'm Hasna ✨<br>
-    Welcome to my personal website for college tasks and sharing a little bit about me.  
-    Feel free to look around and check out my tasks below!</p>
-  </div>
-
-  <div class="links">
-    <a href="https://instagram.com/hasna_alifa_" target="_blank">Instagram: @hasna_alifa_</a>
-    <a href="https://wa.me/0985433870022" target="_blank">WhatsApp: 0985433870022</a>
-  </div>
-
-  <div class="tasks">
-    <h2>My College Tasks</h2>
-    <button class="task-btn" onclick="window.location.href='tugas1.html'">Tugas 1</button>
-    <button class="task-btn" onclick="window.location.href='tugas2.html'">Tugas 2</button>
-    <button class="task-btn" onclick="window.location.href='tugas3.html'">Tugas 3</button>
-  </div>
-
-  <footer>
-    Made with 💙 by Hasna
-  </footer>
-</body>
-</html>    }
+    .box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
     .box ul li {
-      margin: 10px 0;
-      font-size: 1.05rem;
+      margin: 12px 0;
+      font-size: 1.1rem;
     }
 
     /* Gallery */
     .gallery {
       display: flex;
-      gap: 18px;
-      margin: 25px 0;
+      gap: 22px;
+      margin: 30px 0;
       flex-wrap: wrap;
     }
     .gallery img {
-      width: 140px;
-      height: 140px;
-      border-radius: 14px;
+      width: 160px;
+      height: 160px;
+      border-radius: 16px;
       object-fit: cover;
       transition: 0.3s;
     }
     .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(59,130,246,0.8);
+      transform: scale(1.08);
+      box-shadow: 0 0 20px rgba(59,130,246,0.85);
     }
 
     /* Buttons */
     .buttons {
       display: flex;
-      gap: 25px;
+      gap: 30px;
       flex-wrap: wrap;
-      margin-top: 30px;
+      margin-top: 35px;
     }
     .btn {
-      flex: 1 1 250px; /* tombol lebih lebar */
+      flex: 1 1 280px; /* tombol lebih lebar */
       text-align: center;
-      padding: 18px 22px;
+      padding: 20px 28px;
       background: #2563eb;
       color: #fff;
       font-weight: bold;
-      border-radius: 14px;
+      border-radius: 16px;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.45);
     }
     .btn:hover {
       background: #1e40af;
-      transform: translateY(-3px);
-      box-shadow: 0 0 18px rgba(37,99,235,0.7);
+      transform: translateY(-4px);
+      box-shadow: 0 0 22px rgba(37,99,235,0.8);
     }
 
     /* Footer */
     .footer {
       text-align: center;
-      margin-top: 35px;
-      font-size: 1rem;
+      margin-top: 40px;
+      font-size: 1.1rem;
       color: #64748b;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
       .card {
-        padding: 30px;
+        padding: 40px;
       }
       .header {
         flex-direction: column;
         text-align: center;
       }
       .header img {
-        margin-bottom: 14px;
+        margin-bottom: 16px;
       }
       .buttons {
         flex-direction: column;
