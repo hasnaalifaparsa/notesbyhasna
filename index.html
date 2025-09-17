@@ -9,12 +9,13 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: url("https://wallpapercave.com/wp/wp10922677.jpg") no-repeat center center/cover;
+      background: linear-gradient(135deg, #0a192f, #1e3a8a);
+      background-attachment: fixed;
       color: #f1f5f9;
     }
 
     .overlay {
-      background: rgba(10, 25, 47, 0.85); /* dark blue transparent */
+      background: rgba(10, 25, 47, 0.88);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -29,10 +30,23 @@
       max-width: 1200px;
       min-height: 90vh;
       padding: 40px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      border: 2px solid rgba(59, 130, 246, 0.4);
+    }
+
+    /* Navbar */
+    .navbar {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .navbar h2 {
+      color: #93c5fd;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(59,130,246,0.7);
     }
 
     /* Header */
@@ -42,32 +56,24 @@
       gap: 20px;
       margin-bottom: 25px;
     }
-    .profile {
+    .header img {
       width: 130px;
       height: 130px;
       border-radius: 50%;
       border: 3px solid #3b82f6;
+      box-shadow: 0 0 15px rgba(59,130,246,0.7);
       object-fit: cover;
-      box-shadow: 0 0 15px rgba(37,99,235,0.5);
     }
     .header h1 {
       font-size: 2.3rem;
       margin: 0;
       color: #60a5fa;
+      text-shadow: 0 0 10px rgba(37,99,235,0.6);
     }
     .header p {
       margin: 6px 0 0;
       font-size: 1rem;
       color: #cbd5e1;
-    }
-
-    .header a {
-      color: #93c5fd;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .header a:hover {
-      text-decoration: underline;
     }
 
     /* Section */
@@ -88,6 +94,14 @@
       margin-bottom: 20px;
     }
 
+    /* Divider */
+    .divider {
+      text-align: center;
+      margin: 30px 0;
+      color: #60a5fa;
+      font-size: 1.2rem;
+    }
+
     .flex {
       display: flex;
       gap: 20px;
@@ -99,6 +113,12 @@
       background: #1e293b;
       padding: 20px;
       border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: 0.3s;
+    }
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(59,130,246,0.7);
     }
     .box h3 {
       color: #60a5fa;
@@ -125,6 +145,11 @@
       height: 120px;
       border-radius: 12px;
       object-fit: cover;
+      transition: 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(59,130,246,0.8);
     }
 
     /* Buttons */
@@ -144,10 +169,20 @@
       border-radius: 12px;
       text-decoration: none;
       transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
     .btn:hover {
       background: #1e40af;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(37,99,235,0.7);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #64748b;
     }
 
     /* Responsive */
@@ -171,11 +206,15 @@
 <body>
   <div class="overlay">
     <div class="card">
+      <!-- Navbar -->
+      <div class="navbar">
+        <h2>✨ Notes by Hasna ✨</h2>
+      </div>
+
       <!-- Header -->
       <div>
         <div class="header">
-          <!-- Foto Profil -->
-          <img src="IMG_20250601_141637_421.jpg" alt="Foto Profil" class="profile">
+          <img src="IMG_20250817_080440_797.jpg" alt="Foto Profil" class="profile">
           <div>
             <h1>Hasna Alifa</h1>
             <p>She/Her • INTP • Informatics Student 💻</p>
@@ -190,9 +229,13 @@
         <div class="bio">
           <h2>Biography</h2>
           <p>
-            Halo, aku Hasna 👋 Mahasiswi Informatika.
+            Halo, aku Hasna 👋 Mahasiswi Informatika.  
+            Aku suka belajar hal baru, khususnya tentang teknologi, coding, dan juga dunia kreatif 🎨.
           </p>
         </div>
+
+        <!-- Divider -->
+        <div class="divider">✦ ✦ ✦</div>
 
         <!-- Gallery -->
         <div class="gallery">
@@ -200,6 +243,9 @@
           <img src="https://i.pinimg.com/564x/8e/d2/91/8ed291b0cfbc4b49ffcc8e19ef3f6f6d.jpg" alt="img2">
           <img src="https://i.pinimg.com/564x/90/5a/4b/905a4b58a594a3e0c98d75ac22f841c2.jpg" alt="img3">
         </div>
+
+        <!-- Divider -->
+        <div class="divider">✦ ✦ ✦</div>
 
         <!-- Interests & Hobbies -->
         <div class="flex">
@@ -225,6 +271,11 @@
       <!-- Buttons -->
       <div class="buttons">
         <a href="tugas.html" class="btn">📚 Tugas Kuliah</a>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        Made with 💙 by Hasna
       </div>
     </div>
   </div>
