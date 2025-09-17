@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notes by Hasna</title>
+  <style>
+    body { font-family: Arial; margin: 0; }
+    nav { background: #4CAF50; padding: 10px; }
+    nav a { color: white; margin: 10px; cursor: pointer; }
+    section { display: none; padding: 20px; }
+    section.active { display: block; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a onclick="show('home')">Home</a>
+    <a onclick="show('about')">About Me</a>
+    <a onclick="show('notes')">My Notes</a>
+  </nav>
+
+  <section id="home" class="active">
+    <h1>Welcome</h1>
+    <p>Ini halaman utama.</p>
+  </section>
+
+  <section id="about">
+    <h1>About Me</h1>
+    <p>Halo, saya Hasna. Ini tugas kuliah saya.</p>
+  </section>
+
+  <section id="notes">
+    <h1>My Notes</h1>
+    <ul>
+      <li>Note 1: Web Development</li>
+      <li>Note 2: Database</li>
+    </ul>
+  </section>
+
+  <script>
+    function show(id) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
