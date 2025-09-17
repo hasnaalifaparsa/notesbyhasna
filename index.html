@@ -19,16 +19,20 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 30px;
+      padding: 20px;
     }
 
     .card {
       background: rgba(15, 23, 42, 0.95);
-      border-radius: 20px;
-      max-width: 900px;
-      width: 100%;
-      padding: 30px;
+      border-radius: 25px;
+      width: 95%;
+      max-width: 1200px;
+      min-height: 90vh; /* hampir full layar */
+      padding: 40px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     /* Header */
@@ -39,20 +43,20 @@
       margin-bottom: 25px;
     }
     .header img {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       border: 3px solid #3b82f6;
       object-fit: cover;
     }
     .header h1 {
-      font-size: 2rem;
+      font-size: 2.3rem;
       margin: 0;
       color: #60a5fa;
     }
     .header p {
-      margin: 5px 0 0;
-      font-size: 0.95rem;
+      margin: 6px 0 0;
+      font-size: 1rem;
       color: #cbd5e1;
     }
 
@@ -60,14 +64,14 @@
     h2 {
       color: #93c5fd;
       margin-bottom: 10px;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       border-bottom: 2px solid #3b82f6;
       display: inline-block;
       padding-bottom: 3px;
     }
     p {
-      line-height: 1.6;
-      font-size: 0.95rem;
+      line-height: 1.7;
+      font-size: 1rem;
     }
 
     .bio {
@@ -81,10 +85,10 @@
       margin-bottom: 20px;
     }
     .box {
-      flex: 1 1 250px;
+      flex: 1 1 300px;
       background: #1e293b;
-      padding: 15px;
-      border-radius: 12px;
+      padding: 20px;
+      border-radius: 15px;
     }
     .box h3 {
       color: #60a5fa;
@@ -96,13 +100,129 @@
       margin: 0;
     }
     .box ul li {
-      margin: 6px 0;
+      margin: 8px 0;
     }
 
     /* Gallery */
     .gallery {
       display: flex;
-      gap: 10px;
+      gap: 15px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .gallery img {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    /* Buttons */
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+    .btn {
+      flex: 1 1 200px;
+      text-align: center;
+      padding: 15px 20px;
+      background: #2563eb;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #1e40af;
+      transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .card {
+        padding: 25px;
+      }
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header img {
+        margin-bottom: 12px;
+      }
+      .buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="card">
+      <!-- Header -->
+      <div>
+        <div class="header">
+          <img src="https://i.pinimg.com/564x/3e/b2/f3/3eb2f3a1c3e50c38a3429e874c7d3c11.jpg" alt="Profile">
+          <div>
+            <h1>Hasna Alifa</h1>
+            <p>She/Her • ENFP • Informatics Student 💻</p>
+            <p>
+              <a href="https://instagram.com/hasna_alifa_" target="_blank">Instagram</a> • 
+              <a href="https://wa.me/0985433870022" target="_blank">WhatsApp</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Biography -->
+        <div class="bio">
+          <h2>Biography</h2>
+          <p>
+            Halo, aku Hasna 👋 Mahasiswi Informatika. Suka desain, coding, anime, dan kadang bikin cerita ✨  
+            Website ini aku buat untuk latihan & tugas kuliah dengan nuansa dark blue modern + cute vibes 💙
+          </p>
+        </div>
+
+        <!-- Gallery -->
+        <div class="gallery">
+          <img src="https://i.pinimg.com/564x/cd/5f/4b/cd5f4b134f93aa77fa8f6f26dd38aa1b.jpg" alt="img1">
+          <img src="https://i.pinimg.com/564x/8e/d2/91/8ed291b0cfbc4b49ffcc8e19ef3f6f6d.jpg" alt="img2">
+          <img src="https://i.pinimg.com/564x/90/5a/4b/905a4b58a594a3e0c98d75ac22f841c2.jpg" alt="img3">
+        </div>
+
+        <!-- Interests & Fandoms -->
+        <div class="flex">
+          <div class="box">
+            <h3>Interests 💙</h3>
+            <ul>
+              <li>Web Development</li>
+              <li>Anime & Manga</li>
+              <li>Fantasy Novels</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Fandoms 🌌</h3>
+            <ul>
+              <li>Harry Potter</li>
+              <li>Bungo Stray Dogs</li>
+              <li>Genshin Impact</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <a href="tugas.html" class="btn">📚 Tugas Kuliah</a>
+        <a href="#" class="btn">🎨 Portfolio</a>
+        <a href="#" class="btn">📅 Events</a>
+        <a href="#" class="btn">🛍 Shop</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>      gap: 10px;
       margin: 15px 0;
     }
     .gallery img {
